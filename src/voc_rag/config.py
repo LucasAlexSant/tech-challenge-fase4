@@ -11,6 +11,7 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 RAW_DIR = ROOT_DIR / "data" / "raw"
 PROCESSED_DIR = ROOT_DIR / "data" / "processed"
 INDEX_DIR = ROOT_DIR / "data" / "index"
+COLLECTION_NAME = "reviews"
 
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/")
 LLM_API_KEY = os.getenv("LLM_API_KEY", "")
