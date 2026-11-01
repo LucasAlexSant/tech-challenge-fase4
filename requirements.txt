@@ -2,7 +2,4 @@ pandas>=2.2
 python-dotenv>=1.0
 streamlit>=1.40
 pytest>=8.0
-# Adicionar conforme as escolhas da equipe:
-# - biblioteca de embeddings (ex.: sentence-transformers)
-# - banco vetorial (ex.: chromadb, faiss-cpu)
-# - SDK do LLM
+openai>=1.40
