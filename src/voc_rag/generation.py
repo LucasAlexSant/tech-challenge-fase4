@@ -22,8 +22,17 @@ Regras:
 
 
 def build_context(evidences: list[Evidence]) -> str:
-    """Formata as evidências com identificadores para que a resposta possa citá-las."""
-    raise NotImplementedError
+    """Formata as evidências com identificadores [R1], [R2]... para que a resposta possa citá-las.
+
+    Os metadados acompanham o texto para que o modelo possa relacionar o comentário com
+    a nota, a entrega e a categoria do produto.
+    """
+    lines = []
+    for i, e in enumerate(evidences, start=1):
+        m = e.metadata
+        details = f"nota {m.get('review_score')}, entrega {m.get('delivery_status')}, categoria {m.get('product_category')}"
+        lines.append(f"[R{i}] ({details}) {e.text}")
+    return "\n".join(lines)
 
 
 def generate_answer(question: str, context: str) -> str:

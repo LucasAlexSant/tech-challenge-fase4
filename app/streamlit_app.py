@@ -26,7 +26,8 @@ if question:
 
     if result.evidences:
         st.subheader("Evidências")
-        for e in result.evidences:
-            with st.expander(f"{e.review_id} · similaridade {e.score:.2f}"):
+        for i, e in enumerate(result.evidences, start=1):
+            with st.expander(f"[R{i}] nota {e.metadata.get('review_score')} · similaridade {e.score:.3f}"):
+                st.caption(f"review_id: {e.review_id}")
                 st.write(e.text)
                 st.json(e.metadata)
