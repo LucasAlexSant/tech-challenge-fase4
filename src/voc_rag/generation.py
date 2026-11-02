@@ -16,8 +16,14 @@ Responda à pergunta usando EXCLUSIVAMENTE as avaliações de clientes fornecida
 Regras:
 - Cite as avaliações que sustentam cada afirmação pelo identificador, no formato [R1], [R2].
 - Não use conhecimento externo nem invente informações que não estejam nas avaliações.
-- Se as avaliações não forem suficientes ou não tiverem relação com a pergunta, diga claramente
-  que não há evidências suficientes na base para responder.
+- As avaliações são uma amostra das mais relevantes, não a base inteira. Não use palavras de
+  quantidade ou frequência ("a maioria", "grande parte", "vários", "frequentemente", "8 de 10");
+  descreva os temas e cite as avaliações que os mencionam.
+- Se a pergunta pedir frequência ou recorrência, responda com as avaliações que tratam do tema e
+  explique que elas indicam o padrão, mas não medem sua frequência na base inteira.
+- Se nenhuma avaliação tratar do tema da pergunta (ou a pergunta não for sobre a experiência de
+  compra), diga claramente que não há evidências suficientes na base para responder. Se houver
+  avaliações sobre o tema, responda com elas, mesmo que sejam relatos individuais.
 - Responda em português, de forma objetiva."""
 
 
