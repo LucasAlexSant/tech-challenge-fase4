@@ -23,6 +23,29 @@ def transform_query(question: str) -> str:
     return re.sub(r"\s+", " ", question).strip()
 
 
+def build_filters(
+    min_score: int = 1,
+    max_score: int = 5,
+    categories: list[str] | None = None,
+    delivery_statuses: list[str] | None = None,
+) -> dict | None:
+    """Monta o filtro "where" do ChromaDB a partir dos metadados selecionados."""
+    conditions = []
+    if min_score > 1:
+        conditions.append({"review_score": {"$gte": min_score}})
+    if max_score < 5:
+        conditions.append({"review_score": {"$lte": max_score}})
+    if categories:
+        conditions.append({"product_category": {"$in": categories}})
+    if delivery_statuses:
+        conditions.append({"delivery_status": {"$in": delivery_statuses}})
+
+    if not conditions:
+        return None
+    # O ChromaDB exige ao menos duas condições dentro de "$and"
+    return conditions[0] if len(conditions) == 1 else {"$and": conditions}
+
+
 def retrieve(question: str, top_k: int, filters: dict | None = None) -> list[Evidence]:
     """Busca as avaliações mais relevantes, sem textos repetidos.
 
