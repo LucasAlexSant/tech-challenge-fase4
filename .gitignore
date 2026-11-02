@@ -24,3 +24,7 @@ data/index_*/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Material local de apresentação
+docs/roteiro_video.md
+docs/apresentacao.html
