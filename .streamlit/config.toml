@@ -1,0 +1,48 @@
+# Tema baseado no template oficial "shadcn-dual" do Streamlit (mantém a troca claro/escuro).
+# Lido quando o app é executado a partir da raiz do repositório.
+
+[theme]
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "6px"
+buttonRadius = "6px"
+font = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+codeFontSize = "0.875rem"
+baseFontSize = 14
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+
+[theme.light]
+primaryColor = "#2563EB"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FAFAFA"
+codeBackgroundColor = "#F4F4F5"
+textColor = "#09090B"
+linkColor = "#2563EB"
+borderColor = "#E4E4E7"
+grayColor = "#71717A"
+dataframeBorderColor = "#E4E4E7"
+dataframeHeaderBackgroundColor = "#FAFAFA"
+
+[theme.dark]
+primaryColor = "#60A5FA"
+backgroundColor = "#09090B"
+secondaryBackgroundColor = "#18181B"
+codeBackgroundColor = "#27272A"
+textColor = "#FAFAFA"
+linkColor = "#93C5FD"
+borderColor = "#27272A"
+grayColor = "#A1A1AA"
+dataframeBorderColor = "#27272A"
+dataframeHeaderBackgroundColor = "#18181B"
+dataframeHeaderTextColor = "#FAFAFA"
+
+[theme.light.sidebar]
+backgroundColor = "#FAFAFA"
+secondaryBackgroundColor = "#F4F4F5"
+borderColor = "#E4E4E7"
+
+[theme.dark.sidebar]
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#18181B"
+borderColor = "#27272A"
