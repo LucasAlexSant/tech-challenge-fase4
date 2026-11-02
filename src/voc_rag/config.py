@@ -20,7 +20,8 @@ EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "intfloat/multilingual-e5-large")
 
 # Quantidade de avaliações recuperadas por pergunta
 TOP_K = 10
-# Similaridade mínima para uma avaliação contar como evidência. O e5 concentra os scores em
-# faixa alta: perguntas do escopo ficaram entre 0.857 e 0.96 e perguntas sem relação entre
-# 0.80 e 0.877. O limiar barra as claramente fora do escopo; o prompt do LLM trata o restante.
-MIN_SIMILARITY = 0.85
+# Similaridade mínima da melhor avaliação para a pergunta ser enviada ao LLM. Calibrado com o
+# e5-large (15 perguntas do escopo e 15 sem relação): as do escopo ficaram entre 0.832 e 0.948 e as
+# sem relação entre 0.773 e 0.889, faixas que se sobrepõem. Em 0.80, nenhuma pergunta válida é
+# barrada; o limiar descarta sem custo as muito distantes e o prompt do LLM recusa as demais.
+MIN_SIMILARITY = 0.80
